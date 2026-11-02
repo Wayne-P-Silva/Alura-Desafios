@@ -15,14 +15,19 @@ Seleção: O usuário escolhe a operação desejada digitando o dígito correspo
 Coleta e Validação: A aplicação solicita o primeiro e o segundo número. A função auxiliar obter_numero trata pontuação (converte vírgula para ponto) e impede travamentos caso o usuário digite texto ou letras acidentalmente.
 Processamento: O programa chama a função aritmética correspondente à operação escolhida.
 Apresentação e Continuidade: O cálculo é feito, o resultado é exibido na tela formatado e o menu reaparece, permitindo novos cálculos até que a pessoa decida sair digitando 0.
-Respostas às Questões
+
+Respostas às Questões >
 1. Quais são os principais componentes do código gerado?
+
 O código é dividido em quatro blocos essenciais da engenharia de software:
 Funções Aritméticas Especializadas (somar, subtrair, multiplicar, dividir): Cada uma possui responsabilidade única (Single Responsibility Principle), recebendo dois parâmetros numéricos e devolvendo o resultado correspondente.
 Componente de Entrada e Validação (obter_numero): Uma camada de blindagem (sanitização) que garante que o programa só prossiga quando o usuário fornecer valores numéricos reais, tratando exceções de conversão (ValueError).
 Componente de Interface / Menu (exibir_menu): Responsável pela apresentação visual no console, facilitando a interação e legibilidade.
 Orquestrador Central (calculadora): O laço de controle que integra o menu, mapeia as escolhas do usuário usando uma estrutura de dicionário (dict), invoca o cálculo correto e gere o ciclo de vida do programa (iniciar, repetir e encerrar).
+
+
 2. Como a aplicação recebe os números e identifica a operação escolhida?
+
 Identificação da Operação:
 O comando input() captura a opção do usuário como texto (string).
 O método .strip() elimina espaços vazios acidentais.
@@ -31,7 +36,10 @@ Recepção e Tratamento dos Números:
 A função obter_numero() utiliza input() para capturar o dado bruto.
 Realiza o pré-processamento com .replace(',', '.'), permitindo tanto o padrão brasileiro (ex: 7,5) quanto o internacional (ex: 7.5).
 Tenta converter para ponto flutuante (float(entrada)). Se a conversão for bem-sucedida, o número é retornado. Se falhar, o bloco try/except captura o ValueError e repete a pergunta sem interromper o sistema.
+
+
 3. Como a lógica de programação é utilizada para realizar os cálculos e apresentar os resultados?
+
 A lógica se apoia nos seguintes pilares fundamentais da programação:
 Estrutura de Repetição (while True): Mantém a aplicação viva e receptiva a múltiplos comandos sucessivos, evitando que o programa encerre abruptamente após uma única conta.
 Controle de Fluxo Condicional (if, break, continue):
